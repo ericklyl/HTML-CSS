@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>PHP Test</title>
+  </head>
+  <body>
+    <?php
+
+    /**
+     * Filtra os produtos pelo preço máximo.
+     *
+     * @param array $products Array de produtos.
+     * @param float $maxPrice Preço máximo permitido para os produtos.
+     * @return array Array de produtos com preço menor ou igual ao preço máximo.
+     */
+    function filterProductsByPrice($products, $maxPrice) {
+        // Verifica se o parâmetro $products é um array válido e não vazio.
+        if (!is_array($products) || empty($products)) {
+            return [];
+        }
+
+        // Filtra os produtos com base no preço máximo.
+        $filteredProducts = array_filter($products, function($product) use ($maxPrice) {
+            return isset($product['price']) && $product['price'] <= $maxPrice;
+        });
+
+        return $filteredProducts;
+    }
+
+    // Exemplo de entrada
+    $products = [
+        ['id' => 1, 'name' => 'Caneta Azul', 'price' => 2.50],
+        ['id' => 2, 'name' => 'Caderno de 10 Matérias', 'price' => 15.00],
+        ['id' => 3, 'name' => 'Borracha', 'price' => 1.25],
+        ['id' => 4, 'name' => 'Estojo para Lápis', 'price' => 25.00]
+    ];
+
+    $maxPrice = 10.00;
+
+    // Chama a função e exibe o resultado
+    $filteredProducts = filterProductsByPrice($products, $maxPrice);
+    ?>
+
+    <h1>Produtos com preço menor ou igual a <?php echo $maxPrice; ?></h1>
+    <ul>
+      <?php foreach ($filteredProducts as $product): ?>
+        <li><?php echo $product['name'] . " - R$" . $product['price']; ?></li>
+      <?php endforeach; ?>
+    </ul>
+
+    <?php
+    // Caso de teste para verificar a validação dos dados de entrada
+    $invalidProducts = "not an array";
+    $emptyProducts = [];
+
+    $filteredInvalidProducts = filterProductsByPrice($invalidProducts, $maxPrice);
+    $filteredEmptyProducts = filterProductsByPrice($emptyProducts, $maxPrice);
+    ?>
+
+    <h2>Teste com entrada inválida:</h2>
+    <pre><?php print_r($filteredInvalidProducts); ?></pre>
+
+    <h2>Teste com array vazio:</h2>
+    <pre><?php print_r($filteredEmptyProducts); ?></pre>
+  </body>
+</html>
