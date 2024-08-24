@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+p{
+    color: darkblue;
+}
+
+body div h1{
+    color: purple;
+}
+
+div{
+    color: initial;
+    margin-left: 20px;
+}
+
+.pai .um + .dois{ /*todos os 2 dps do 1*/
+    color: rgb(50, 135, 238);
+}
+
+[meu-atributo] {
+    color: rgb(255, 0, 0);
+}
