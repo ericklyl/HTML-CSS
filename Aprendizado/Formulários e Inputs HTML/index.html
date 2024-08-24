@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        label{
+            cursor:pointer; /*Mostra que é clicavel*/
+            display: block; /*quebra linha, deixa o campo ema b*/
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="#" method="get" target="_blank" autocomplete="off">
+        <p>O meu Formulario</p>
+
+        <p>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        </p>
+            <!--Pode marcar varios-->
+        <p>
+            <label for="dev1">Sou um dev:</label>
+            <input type="checkbox" id="dev1" name="dev1" value="sim" checked>
+
+            <label for="dev2">Sou um dev:</label>
+            <input type="checkbox" id="dev2" name="dev2" value="sim" checked>
+
+            <label for="dev3">Sou um dev:</label>
+            <input type="checkbox" id="dev3" name="dev3" value="sim" checked>
+        </p>
+
+        <p>
+            <!--Só pode marcar um-->
+            Genero:<br>
+            <label for="feminino">Feminino</label>
+            <input type="radio" id="feminino" name="genero" value="feminino">
+
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="masculino" name="genero" value="masculino">
+
+            <label for="outro">Outro ou Outra</label>
+            <input type="radio" id="outro_outra" name="genero" value="outro_outra" checked>
+        </p>
+
+        
+        <p>
+            <label for="date">Data:</label>
+            <input type="date" id="date" name="date">
+
+        </p>
+
+        
+        <p>
+            <label for="datetime">Data e hora:</label>
+            <input type="datetime-local" id="datetime" name="datetime" value="2024-08-24T20:00" required>
+        </p>
+        
+        <p>
+            <label for="time">Horario:</label>
+            <input type="time" id="time" name="time" value="20:00" required>
+        </p>
+        
+        <p>
+            <label for="color">Cor:</label>
+            <input type="color" id="color" name="cor" value="#003d66" required>
+        </p>
+
+        <p>
+            <label for="email">Seu email:</label>
+            <input type="email" id="email" name="email" placeholder="ex.:nome@gmial.com" required>
+        </p>
+
+        <p>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+        </p>
+
+        <p>
+            <label for="file">Sua foto:</label>
+            <input type="file" id="file" name="file" required accept=".png, .svg,image/*" multiple>
+        </p>
+
+        <p>
+            <label for="number">Numero:</label>
+            <input type="number" id="number" name="number" placeholder="Digite um numero">
+        </p>
+
+        <p>
+            <label for="range">Range:</label>
+            <input type="range" id="range" name="range" min="0" max="10" step="2">
+       
+        </p>
+
+
+        <p>
+            <button type="reset">Reset</button>
+            <button type="submit">Enviar</button>
+        </p>
+
+        <p>
+            <label for="search">Link:</label>
+            <input type="search" id="search" name="search" placeholder="Digite sua url" required>
+        </p>
+
+        <p>
+            <label for="select">Selecione algo:</label>
+            <select id="select" name="select">
+                <option value="qualquer 1" label="Label 1"></option>
+                <option value="qualquer 2" label="Label 2" selected></option>
+                <option value="qualquer 3" label="Label 3"></option>
+                <option value="qualquer 4" label="Label 4"></option>
+
+            </select>
+        </p>
+
+        <p>
+            <label for="textarea">textarea:</label>
+            <textarea name="textarea" id="textarea" rows="3" cols="9">Insira o texto</textarea>
+        </p>
+
+    </form>
+    
+</body>
+</html>
